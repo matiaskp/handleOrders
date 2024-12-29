@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Pompeya</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="/static/images/logo.png" alt="" class="logo1">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Estadísticas</a></li>
+                <li><a href="{{ url_for('produccion') }}">Pedidos</a></li>
+                <li><a href="{{ url_for('stock') }}">Producción</a></li>
+                <li><a href="{{ url_for('faltantes') }}">Inventario</a></li>
+            </ul>
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

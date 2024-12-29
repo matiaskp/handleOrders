@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Actualizar Faltantes</h1>
+    <div class="update-form">
+        <form action="/update3/{{ product_to_update.id }}" method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.faltante.label() }}<br>
+            {{ form.faltante(value=product_to_update.faltante) }}<br>
+            {{ form.cantidad.label() }}<br>
+            {{ form.cantidad(value=product_to_update.cantidad) }}<br>
+            {{ form.añadir() }}<br>
+        </form>
+    </div>
+{% endblock %}

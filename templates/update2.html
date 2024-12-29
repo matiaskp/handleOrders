@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Actualizar Productos</h1>
+    <div class="update-form">
+        <form action="/update2/{{ product_to_update.id }}" method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.en_stock.label() }}<br>
+            {{ form.en_stock(value=product_to_update.en_stock) }}<br>
+            {{ form.cantidad2.label() }}<br>
+            {{ form.cantidad2(value=product_to_update.cantidad2) }}<br>
+            {{ form.añadir() }}<br>
+        </form>
+    </div>
+{% endblock %}

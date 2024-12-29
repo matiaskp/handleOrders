@@ -1,0 +1,45 @@
+
+{% extends "base.html" %}
+{% block content %}
+    <main>
+        <div class="header1">
+            <h1>Estadísticas totales</h1><img src="/static/images/pizza-removebg-preview.png" alt="" class="logo2">
+        </div>
+        <section class="estadisticas">
+            <!--Estos divs estan dentro de una section estadisticas que se comportara como contender flex-->
+            <div class="produccion">
+                <h2>Producción</h2>
+                <ul>
+                    {% for i in produccion %}
+                    <li>Nuevo Pedido: {{ i.desmechados }}</li>
+                    {% endfor %}
+                    {% for i in produccion2 %}
+                    <li>Nuevo Pedido: {{ i.hamburguesas }}</li>
+                    {% endfor %}
+                    {% for i in produccion3 %}
+                    <li>Nuevo Pedido: {{ i.lomitos }}</li>
+                    {% endfor %}
+                    {% for i in produccion4 %}
+                    <li>Nuevo Pedido: {{ i.pizzas }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="faltantes">
+                <h2>Faltantes</h2>
+                <ul>
+                    {% for i in faltantes %}
+                    <li>Faltante: {{ i.faltante }} Cantidad: {{ i.cantidad }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="en-stock">
+                <h2>En Stock</h2>
+                <ul>
+                    {% for i in stock %}
+                    <li>En Stock: {{ i.en_stock }} Cantidad: {{ i.cantidad2 }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+    </main>
+{% endblock %}

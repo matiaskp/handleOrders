@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="header1">
+	<h1>Menú de producción</h1>
+	<img src="/static/images/lomito-removebg-preview.png" alt="" class="lomito">
+</div>
+	<div class="container-stock">
+		<div class="form-container">
+			<form method="POST">
+				{{ form.hidden_tag() }}
+				{{ form.en_stock.label() }}<br>
+				{{ form.en_stock() }}<br>
+                {{ form.cantidad2.label() }}<br>
+                {{ form.cantidad2() }}
+				{{ form.añadir() }}<br>
+			</form><br>
+		</div>
+		<div class="product-list-container2">
+			<h2>Completar</h2>
+			{% for i in stockTotal %}
+			<p>{{ i.en_stock }} {{ i.cantidad2 }} </p><a href="/update2/{{ i.id }}"><button class="cambiar">Editar</button></a><a href="/delete2/{{ i.id }}"><button class="borrar">Borrar</button></a>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

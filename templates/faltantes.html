@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="header1">
+	<h1>Inventario de productos</h1>
+	<img src="/static/images/papas2-removebg-preview.png" alt="" class="lomito">
+</div>
+	<div class="container-faltantes">
+		<div class="form-container">
+			<form method="POST">
+				{{ form.hidden_tag() }}
+				{{ form.faltante.label() }}<br>
+				{{ form.faltante() }}<br>
+                {{ form.cantidad.label() }}<br>
+                {{ form.cantidad() }}
+				{{ form.añadir() }}<br>
+			</form><br>
+		</div>
+		<div class="product-list-container3">
+			<h2>Lista de productos</h2>
+			{% for i in faltantesTotal %}
+			<p>{{ i.faltante }} {{ i.cantidad }} </p><a href="/update3/{{ i.id }}"><button class="cambiar">Editar</button></a><a href="/delete3/{{ i.id }}"><button class="borrar">Borrar</button></a>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

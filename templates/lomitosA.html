@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Actualizar Productos</h1>
+<div class="update-container">
+    <div class="update-form">
+        <form action="/lomitosA/{{ product_to_update.id }}" method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.lomitos.label() }}<br>
+            {{ form.lomitos() }}<br>
+            {{ form.cantidadyMesa3.label() }}<br>
+            {{ form.cantidadyMesa3(value=product_to_update.cantidadyMesa3) }}<br>
+            {{ form.agregados3.label() }}<br>
+            {{ form.agregados3() }}<br>            
+            {{ form.añadir() }}<br>
+        </form>
+    </div>
+    <div class="pedido-actual">
+        <h2>Pedido modificado:</h2><br>
+        <p>{{ product_to_update.lomitos }}</p>
+        <p>{{ product_to_update.cantidadyMesa3 }}</p>
+        <p>{{ product_to_update.agregados3 }}</p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="header1">
+	<h1>Menú de pedidos</h1>
+	<img src="/static/images/hamburguer1.jpg" alt="" class="header2-hambur">
+</div>
+	<div class="container-produccion">
+		<div class="product-flex-c">
+			<div class="product-list-container">
+				<form method="POST">
+					{{ form.hidden_tag() }}
+					{{ form.desmechados.label() }}<br>
+					{{ form.desmechados() }}<br>
+					{{ form.agregados.label() }}<br>
+					{{ form.agregados() }}<br>
+					{{ form.cantidadyMesa.label() }}<br>
+					{{ form.cantidadyMesa() }}<br>
+					{{ form.añadir() }}<br>
+				</form><br>
+				<h2>Lista de pedidos</h2>
+					{% for i in productoTotal %}
+					<p>Desmechado: {{ i.desmechados }}</p><p>Agregados: {{ i.agregados }}</p><p>cantidad/mesa: {{ i.cantidadyMesa }}</p><a href="/update/{{ i.id }}"><button class="cambiar">Editar</button></a><a href="/delete/{{ i.id }}"><button class="borrar">Borrar</button></a>
+					{% endfor %}
+			</div>
+			<div class="product-list-container">
+				<form method="POST">
+					{{ form2.hidden_tag() }}
+					{{ form2.hamburguesas.label() }}<br>
+					{{ form2.hamburguesas() }}<br>
+					{{ form2.agregados2.label() }}<br>
+					{{ form2.agregados2() }}<br>
+					{{ form2.cantidadyMesa2.label() }}<br>
+					{{ form2.cantidadyMesa2() }}<br>
+					{{ form2.añadir() }}<br>
+				</form><br>
+				<h2>Lista de pedidos</h2>
+				{% for i in hamburguesasTotal %}
+				<p>Hamburguesa: {{ i.hamburguesas }}</p><p>Agregados: {{ i.agregados2 }}</p><p>cantidad/mesa: {{ i.cantidadyMesa2 }}</p><a href="/hamburguesasA/{{ i.id }}"><button class="cambiar">Editar</button></a><a href="/hamburguesasD/{{ i.id }}"><button class="borrar">Borrar</button></a>
+				{% endfor %}
+			</div>
+			<div class="product-list-container">
+				<form method="POST">
+					{{ form3.hidden_tag() }}
+					{{ form3.lomitos.label() }}<br>
+					{{ form3.lomitos() }}<br>
+					{{ form3.agregados3.label() }}<br>
+					{{ form3.agregados3() }}<br>
+					{{ form3.cantidadyMesa3.label() }}<br>
+					{{ form3.cantidadyMesa3() }}<br>
+					{{ form3.añadir() }}<br>
+				</form><br>
+				<h2>Lista de pedidos</h2>
+				{% for i in lomitosTotal %}
+				<p>Lomito: {{ i.lomitos }}</p><p>Tipo: {{ i.agregados3 }}</p><p>cantidad/mesa: {{ i.cantidadyMesa3 }}</p><a href="/lomitosA/{{ i.id }}"><button class="cambiar">Editar</button></a><a href="/lomitosD/{{ i.id }}"><button class="borrar">Borrar</button></a>
+				{% endfor %}
+			</div>
+			<div class="product-list-container">
+				<form method="POST">
+					{{ form4.hidden_tag() }}
+					{{ form4.pizzas.label() }}<br>
+					{{ form4.pizzas() }}<br>
+					{{ form4.agregados4.label() }}<br>
+					{{ form4.agregados4() }}<br>
+					{{ form4.cantidadyMesa4.label() }}<br>
+					{{ form4.cantidadyMesa4() }}<br>
+					{{ form4.añadir() }}<br>
+				</form><br>
+				<h2>Lista de pedidos</h2>
+				{% for i in pizzasTotal %}
+				<p>Pizza: {{ i.pizzas }}</p><p>Tipo: {{ i.agregados4 }}</p><p>cantidad/mesa: {{ i.cantidadyMesa4 }}</p><a href="/pizzasA/{{ i.id }}"><button class="cambiar">Editar</button></a><a href="/pizzasD/{{ i.id }}"><button class="borrar">Borrar</button></a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
